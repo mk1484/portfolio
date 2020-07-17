@@ -22,7 +22,7 @@ export default () =>(
         </header>
         <section className="hero">
             <figure>
-                <img src="images/hero.jpg" alt="" />
+                <img src="images/main.jpg" alt="" />
             </figure>
             <div className="catch">
                 <h1>texttexttext<br />texttexttext</h1>
