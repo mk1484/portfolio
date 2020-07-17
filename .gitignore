@@ -1,5 +1,5 @@
-# 「.idea/workspace.xmlgit 」フォルダを除外
-.idea/workspace.xml
+# 「.idea/」フォルダを除外
+.idea/
 
 # Logs
 logs
