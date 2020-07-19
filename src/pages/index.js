@@ -32,7 +32,7 @@ export default () =>(
                 <img src="images/wave.svg" alt="" />
             </div>
         </section>
-        <section className="food">
+        <section className="service">
             <div className="container">
                 <h2 className="bar">About<span>About</span></h2>
                 <div className="details">
@@ -62,12 +62,6 @@ export default () =>(
                     </div>
                 </div>
             </div>
-        </section>
-        <section className="photo">
-            <h2 className="sr-only">Photo</h2>
-            <figure>
-                <img src="images/photo.jpg" alt="" />
-            </figure>
         </section>
         <footer className="footer">
             <div className="container">
