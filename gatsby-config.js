@@ -3,8 +3,14 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-
 module.exports = {
   /* Your site config here */
-  plugins: [],
+    siteMetadata: {
+      title: `Ishibashi Portfolio`,
+        description: `制作実績`,
+        lang: 'ja',
+    },
+  plugins: [
+      `gatsby-plugin-react-helmet`
+  ],
 }
