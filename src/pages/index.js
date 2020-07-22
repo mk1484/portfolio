@@ -1,9 +1,10 @@
 import React from "react"
 
-const hello = "こんにちは"
+import SEO from "../components/seo"
 
 export default () =>(
     <div>
+        <SEO />
         <header className="header">
             <div className="container">
                 <div className="site">
