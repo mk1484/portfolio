@@ -1,13 +1,12 @@
 import React from "react"
 
 import SEO from "../components/seo"
-import Header from "../components/header"
-import Footer from "../components/footer"
+import Layout from "../components/layout"
 
 export default () =>(
     <div>
         <SEO />
-        <Header />
+        <Layout>
         <section className="main">
             <div className="container">
             <figure>
@@ -61,6 +60,6 @@ export default () =>(
                 </div>
             </div>
         </section>
-        <Footer />
+        </Layout>
     </div>
   )
