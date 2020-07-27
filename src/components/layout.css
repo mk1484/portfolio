@@ -235,9 +235,9 @@ svg {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	color: #fff;
-    background-image: url(/images/pattern.jpg);
+    /*background-image: url(/images/pattern.jpg);*/
     background-size: cover;
-    background-color: #fff0b9;
+    background-color: #333;
 }
 
 .footer .container {
@@ -287,4 +287,72 @@ svg {
 
 .sns li:not(:last-child) {
 	margin-right: 30px;
+}
+
+
+/* ===========================
+ aboutページ
+ =========================== */
+.about-skills {
+
+}
+
+.about-skills h2 {
+	font-size: 20px;
+}
+
+.about-skills .details {
+	/*display: flex;*/
+}
+.about-skills .details .detail {
+	text-align: center;
+}
+.about-skills .details .detail figure img {
+	width: 100%;
+}
+
+.arrow_wrap{
+	padding-bottom: 200px;
+	overflow: hidden;
+}
+.arrow{
+	position: relative;
+}
+.arrow::after{
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: calc(50vw - 50%);
+	width: 0;
+	height: 0;
+	border-top: 50px solid #fff;
+	border-left: 50vw solid transparent;
+	border-right: 50vw solid transparent;
+}
+
+.about-vision {
+	 background: #f3f3f3;
+	 margin-top: -200px;
+}
+
+.about-vision h2 {
+	margin-top: 50px;
+}
+
+@media (min-width: 900px) {
+	.about-skills {
+
+	}
+	.about-skills .details {
+		display: flex;
+	}
+	.about-skills .details .detail figure img {
+		width: 100%;
+	}
+	.arrow::after {
+		border-top: 120px solid #fff;
+	}
+	.about-vision h2 {
+		margin-top: 120px;
+	}
 }
