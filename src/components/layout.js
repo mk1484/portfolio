@@ -5,6 +5,7 @@ import Footer from "../components/footer"
 
 import "./layout.css"
 
+
 export default ({ children }) => (
     <div>
         <Header />
