@@ -1,18 +1,19 @@
 import React from "react"
+import { Link } from "gatsby"
 
 export default () => (
     <header className="header">
         <div className="container">
             <div className="site">
-                <a href="base-index.html">
+                <Link to={`/`}>
                     <img src="images/logo.svg" alt="" />
-                </a>
+                </Link>
             </div>
             <nav className="nav">
                 <ul>
-                    <li><a href="base-about.html">About</a></li>
-                    <li><a href="base-works.html">Works</a></li>
-                    <li><a href="base-works.html">Contact</a></li>
+                    <li><Link to={`/about`}>About</Link></li>
+                    <li><Link to={`/works`}>Works</Link></li>
+                    <li><Link to={`/contact`}>Contact</Link></li>
                 </ul>
             </nav>
         </div>

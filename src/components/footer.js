@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -11,10 +12,10 @@ export default () => (
     <footer className="footer">
         <div className="container">
             <div className="site">
-                <a href="base-index.html">
+                <Link to={`/`}>
                     <img src="images/logo-w.svg" alt="" />
                     <p>portfolio</p>
-                </a>
+                </Link>
             </div>
             <ul className="sns">
                 <li>
