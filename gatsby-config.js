@@ -1,3 +1,4 @@
+require('dotenv').config()
 /**
  * Configure your Gatsby site with this file.
  *
@@ -11,6 +12,14 @@ module.exports = {
         lang: 'ja',
     },
   plugins: [
-      `gatsby-plugin-react-helmet`
+      `gatsby-plugin-react-helmet`,
+      {
+          resolve: `gatsby-source-contentful`,
+          options: {
+              spaceId: process.env.CONTENTFUL_SPACE_ID,
+              accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+              host: process.env.CONTENTFUL_HOST,
+          },
+      },
   ],
 }
