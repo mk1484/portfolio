@@ -3,6 +3,15 @@ import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+    faClock, faFolderOpen
+} from "@fortawesome/free-regular-svg-icons"
+import {
+    faChevronLeft, faChevronRight
+} from "@fortawesome/free-solid-svg-icons"
+
+
 export default () =>(
     <div>
         <SEO />
@@ -16,10 +25,9 @@ export default () =>(
                 <div className="container">
                     <h1 className="bar">記事のタイトル</h1>
                     <aside className="info">
-                        <time dateTime="XXXX-XX-XX"><i className="far fa-clock" />XXXX年XX月XX日</time>
+                        <time dateTime="XXXX-XX-XX"><FontAwesomeIcon icon={faClock} />XXXX年XX月XX日</time>
                         <div className="cat">
-                            <i className="far fa-folder-open" />
-                            <ul>
+                            <FontAwesomeIcon icon={faFolderOpen} />                            <ul>
                                 <li className="スラッグ">カテゴリーＡ</li>
                                 <li className="スラッグ">カテゴリーＢ</li>
                             </ul>
@@ -35,14 +43,14 @@ export default () =>(
                     <ul className="postlink">
                         <li className="prev">
                             <a href="base-blogpost.html" rel="prev">
-                                <i className="fas fa-chevron-left" />
+                                <FontAwesomeIcon icon={faChevronLeft} />
                                 <span>前の記事</span>
                             </a>
                         </li>
                         <li className="next">
                             <a href="base-blogpost.html" rel="next">
                                 <span>次の記事</span>
-                                <i className="fas fa-chevron-right" />
+                                <FontAwesomeIcon icon={faChevronRight} />
                             </a>
                         </li>
                     </ul>
