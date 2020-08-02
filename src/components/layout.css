@@ -361,44 +361,7 @@ svg {
 /* ===========================
  ブログページ
  =========================== */
-.postbody > * {
-	margin-bottom: 2em;
-}
-.postbody h2 {
-	margin-top: 2.5em;
-	margin-bottom: 1.5em;
-	font-size: 20px;
-}
-.postbody h2 [class*="fa-"] {
-	margin-right: 15px;
-	color: #477294;
-}
 
-.postbody p {
-	line-height: 1.8;
-}
-.postbody ul {
-	padding-left: 30px;
-}
-.postbody li:not(:last-child) {
-	margin-bottom: 1em;
-}
-
-@media (min-width: 768px) {
-	.content {
-		padding-top: 70px;
-		padding-bottom: 60px;
-	}
-
-	.content h1 {
-		margin-bottom: 40px;
-		font-size: 38px;
-	}
-
-	.postbody h2 {
-		font-size: 28px;
-	}
-}
 /* ブログ記事の情報 */
 .info time {
 	margin-bottom: 5px;
