@@ -26,9 +26,11 @@ export default ({ data }) =>(
                 <div className="container">
                     <h1 className="bar">{data.contentfulWorksPost.title}</h1>
                     <aside className="info">
-                        <time dateTime="XXXX-XX-XX"><FontAwesomeIcon icon={faClock} />XXXX年XX月XX日</time>
+                        <time dateTime={data.contentfulWorksPost.publishDate}>
+                            <FontAwesomeIcon icon={faClock} />{data.contentfulWorksPost.publishDateJP}</time>
                         <div className="cat">
-                            <FontAwesomeIcon icon={faFolderOpen} />                            <ul>
+                            <FontAwesomeIcon icon={faFolderOpen} />
+                            <ul>
                                 <li className="スラッグ">カテゴリーＡ</li>
                                 <li className="スラッグ">カテゴリーＢ</li>
                             </ul>
@@ -65,6 +67,8 @@ export const query = graphql`
     query {
         contentfulWorksPost {
             title
+            publishDateJP: publishDate(formatString: "YYYY年MM月DD日")
+            publishDate
         }
      }
 `
