@@ -31,7 +31,7 @@ export default ({ data }) =>(
                         <div className="cat">
                             <FontAwesomeIcon icon={faFolderOpen} />
                             <ul>
-                                <li className={data.contentfulWorksPost.category.categorySlug}>
+                                <li className={data.contentfulWorksPost.category.categorySlug} key={data.contentfulWorksPost.category.id}>
                                     {data.contentfulWorksPost.category.category}
                                     </li>
                             </ul>
@@ -73,6 +73,7 @@ export const query = graphql`
          category {
           category
           categorySlug
+          id
         }
        }
      }
