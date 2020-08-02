@@ -1,6 +1,7 @@
 import React from "react"
 
 import SEO from "../components/seo"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -12,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 
-export default () =>(
+export default ({ data }) =>(
     <div>
         <SEO />
         <Layout>
@@ -23,7 +24,7 @@ export default () =>(
             </div>
             <article className="content">
                 <div className="container">
-                    <h1 className="bar">記事のタイトル</h1>
+                    <h1 className="bar">{data.contentfulWorksPost.title}</h1>
                     <aside className="info">
                         <time dateTime="XXXX-XX-XX"><FontAwesomeIcon icon={faClock} />XXXX年XX月XX日</time>
                         <div className="cat">
@@ -59,3 +60,11 @@ export default () =>(
         </Layout>
     </div>
 )
+
+export const query = graphql`
+    query {
+        contentfulWorksPost {
+            title
+        }
+     }
+`
