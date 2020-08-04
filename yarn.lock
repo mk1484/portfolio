@@ -6813,6 +6813,15 @@ gatsby-graphiql-explorer@^0.4.3:
   dependencies:
     "@babel/runtime" "^7.9.6"
 
+gatsby-image@^2.4.14:
+  version "2.4.14"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.4.14.tgz#23e02f5248c96471d7561bd56af8be2b39847a09"
+  integrity sha512-JO4Ul+EMCCPS0FddFc8USCDl5roUZDOXg8x99DxE0UShuZTEAtkn+kb8KzpvtPlnwt/0YwBUpcvVrat3yAVz2w==
+  dependencies:
+    "@babel/runtime" "^7.10.3"
+    object-fit-images "^3.2.4"
+    prop-types "^15.7.2"
+
 gatsby-interface@0.0.163:
   version "0.0.163"
   resolved "https://registry.yarnpkg.com/gatsby-interface/-/gatsby-interface-0.0.163.tgz#49fc1dd82a92b260f0af85172f6018cd097952c2"
@@ -6893,6 +6902,30 @@ gatsby-plugin-sharp@^2.6.23:
     lodash "^4.17.15"
     mini-svg-data-uri "^1.2.3"
     potrace "^2.1.6"
+    probe-image-size "^4.1.1"
+    progress "^2.0.3"
+    semver "^5.7.1"
+    sharp "^0.25.1"
+    svgo "1.3.2"
+    uuid "^3.4.0"
+
+gatsby-plugin-sharp@^2.6.24:
+  version "2.6.24"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.6.24.tgz#af93bcb155861413d3e003c631e67623e90c3406"
+  integrity sha512-tMcfnT4clBMv4Sok4sUvP7k+EIGKvQ9o8XGUT7QmKO/dybdXGhmH6N2jdSeL2Zt9xZliW5lxK5eLBTt5dH+VjQ==
+  dependencies:
+    "@babel/runtime" "^7.10.3"
+    async "^2.6.3"
+    bluebird "^3.7.2"
+    fs-extra "^8.1.0"
+    gatsby-core-utils "^1.3.14"
+    got "^8.3.2"
+    imagemin "^6.1.0"
+    imagemin-mozjpeg "^8.0.0"
+    imagemin-pngquant "^6.0.1"
+    lodash "^4.17.15"
+    mini-svg-data-uri "^1.2.3"
+    potrace "^2.1.8"
     probe-image-size "^4.1.1"
     progress "^2.0.3"
     semver "^5.7.1"
@@ -7070,6 +7103,19 @@ gatsby-telemetry@^1.3.9:
     stack-trace "^0.0.10"
     stack-utils "1.0.2"
     uuid "3.4.0"
+
+gatsby-transformer-sharp@^2.5.12:
+  version "2.5.12"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.5.12.tgz#de1cc193c7bbd5a62868bc72eac2f7ebb30418ea"
+  integrity sha512-f9VQVs7WFv3js6oGReJX1WUYxYTfE9CT+VV8tJHJ+uiUQ8JpDHRq4hjDGdhfFgaPjsmdb7Y4gUVOsLsWLitXOg==
+  dependencies:
+    "@babel/runtime" "^7.10.3"
+    bluebird "^3.7.2"
+    fs-extra "^8.1.0"
+    potrace "^2.1.8"
+    probe-image-size "^4.1.1"
+    semver "^5.7.1"
+    sharp "^0.25.1"
 
 gatsby@^2.22.15:
   version "2.22.15"
@@ -10305,6 +10351,11 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
+object-fit-images@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/object-fit-images/-/object-fit-images-3.2.4.tgz#6c299d38fdf207746e5d2d46c2877f6f25d15b52"
+  integrity sha512-G+7LzpYfTfqUyrZlfrou/PLLLAPNC52FTy5y1CBywX+1/FkxIloOyQXBmZ3Zxa2AWO+lMF0JTuvqbr7G5e5CWg==
+
 object-hash@^1.1.4:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.3.1.tgz#fde452098a951cb145f039bb7d455449ddc126df"
@@ -11438,7 +11489,7 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.3
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-potrace@^2.1.6:
+potrace@^2.1.6, potrace@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/potrace/-/potrace-2.1.8.tgz#50f6fba92e1e39ddef6f979b0a0f841809e0acf2"
   integrity sha512-V9hI7UMJyEhNZjM8CbZaP/804ZRLgzWkCS9OOYnEZkszzj3zKR/erRdj0uFMcN3pp6x4B+AIZebmkQgGRinG/g==
