@@ -45,9 +45,7 @@ export default ({ data }) =>(
                     </aside>
                     <div className="postbody">
                         <p>
-                            記事の本文です。記事の本文です。記事の本文です。記事の本文です。記事の本文です。
-                            記事の本文です。記事の本文です。記事の本文です。記事の本文です。記事の本文です。
-                            記事の本文です。記事の本文です。記事の本文です。記事の本文です。記事の本文です。
+                            {documentToReactComponents(data.contentfulWorksPost.content.json)}
                         </p>
                     </div>
                     <ul className="postlink">
@@ -94,6 +92,9 @@ export const query = graphql`
           },
           description
         }
+        content {
+            json
+         }
        }
      }
 `
