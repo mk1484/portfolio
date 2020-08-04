@@ -10,11 +10,24 @@ import {
     faClock, faFolderOpen
 } from "@fortawesome/free-regular-svg-icons"
 import {
-    faChevronLeft, faChevronRight
+    faChevronLeft,
+    faChevronRight,
+    faCheckSquare,
 } from "@fortawesome/free-solid-svg-icons"
 
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
+import { BLOCKS } from "@contentful/rich-text-types"
+const options = {
+    renderNode: {
+        [BLOCKS.HEADING_2]: (node, children) => (
+            <h2>
+                <FontAwesomeIcon icon={faCheckSquare} />
+                {children}
+            </h2>
+        ),
+    },
+}
 
 export default ({ data }) =>(
     <div>
@@ -45,7 +58,9 @@ export default ({ data }) =>(
                     </aside>
                     <div className="postbody">
                         <p>
-                            {documentToReactComponents(data.contentfulWorksPost.content.json)}
+                            {documentToReactComponents(data.contentfulWorksPost.content.json,
+                                options
+                            )}
                         </p>
                     </div>
                     <ul className="postlink">
