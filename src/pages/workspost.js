@@ -13,6 +13,8 @@ import {
     faChevronLeft, faChevronRight
 } from "@fortawesome/free-solid-svg-icons"
 
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
 
 export default ({ data }) =>(
     <div>
