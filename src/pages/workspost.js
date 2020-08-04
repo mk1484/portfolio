@@ -22,7 +22,7 @@ export default ({ data }) =>(
                 <figure>
                     <Img
                         fluid={data.contentfulWorksPost.eyecatch.fluid}
-                        alt="アイキャッチ"
+                        alt={data.contentfulWorksPost.eyecatch.description}
                     />
                 </figure>
             </div>
@@ -89,7 +89,8 @@ export const query = graphql`
             srcSet
             srcSetWebp
             srcWebp
-          }
+          },
+          description
         }
        }
      }
