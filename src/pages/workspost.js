@@ -22,9 +22,19 @@ const options = {
     renderNode: {
         [BLOCKS.HEADING_2]: (node, children) => (
             <h2>
-                <FontAwesomeIcon icon={faCheckSquare} />
+                <FontAwesomeIcon icon={faCheckSquare}/>
                 {children}
             </h2>
+        ),
+        [BLOCKS.EMBEDDED_ASSET]: node => (
+            <img
+                src={node.data.target.fields.file["ja-JP"].url}
+                alt={
+                    node.data.target.fields.description
+                    ? node.data.target.fields.description["ja-JP"]
+                        : node.data.target.fields.title["ja-JP"]
+                }
+            />
         ),
     },
 }
