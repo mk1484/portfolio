@@ -23,6 +23,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         createPage({
             path: `/works/post/${node.slug}/`,
             component: path.resolve(`./src/templates/workspost-template.js`),
+            context: {
+                id: node.id,
+            },
         })
     })
 }
