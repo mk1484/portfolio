@@ -31,7 +31,7 @@ const options = {
                 src={node.data.target.fields.file["ja-JP"].url}
                 alt={
                     node.data.target.fields.description
-                    ? node.data.target.fields.description["ja-JP"]
+                        ? node.data.target.fields.description["ja-JP"]
                         : node.data.target.fields.title["ja-JP"]
                 }
             />
@@ -62,7 +62,7 @@ export default ({ data }) =>(
                             <ul>
                                 <li className={data.contentfulWorksPost.category.categorySlug} key={data.contentfulWorksPost.category.id}>
                                     {data.contentfulWorksPost.category.category}
-                                    </li>
+                                </li>
                             </ul>
                         </div>
                     </aside>
@@ -94,8 +94,8 @@ export default ({ data }) =>(
 )
 
 export const query = graphql`
-    query {
-        contentfulWorksPost {
+    query($id: String!) {
+        contentfulWorksPost(id: { eq: $id }) {
             title
             publishDateJP: publishDate(formatString: "YYYY年MM月DD日")
             publishDate
