@@ -5,8 +5,8 @@ import Layout from "../components/layout"
 
 export default () =>(
     <div>
-        <SEO />
         <Layout>
+            <SEO />
         <section className="about">
             <div className="container">
                 <h2>About</h2>
