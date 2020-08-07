@@ -1,7 +1,7 @@
 import React from "react"
 
 import SEO from "../components/seo"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 
@@ -39,7 +39,7 @@ const options = {
     },
 }
 
-export default ({ data }) =>(
+export default ({ data,pageContext }) =>(
     <div>
         <SEO />
         <Layout>
@@ -74,18 +74,22 @@ export default ({ data }) =>(
                         </p>
                     </div>
                     <ul className="postlink">
-                        <li className="prev">
-                            <a href="base-blogpost.html" rel="prev">
-                                <FontAwesomeIcon icon={faChevronLeft} />
-                                <span>前の記事</span>
-                            </a>
-                        </li>
-                        <li className="next">
-                            <a href="base-blogpost.html" rel="next">
-                                <span>次の記事</span>
-                                <FontAwesomeIcon icon={faChevronRight} />
-                            </a>
-                        </li>
+                        {pageContext.next && (
+                            <li className="prev">
+                                <Link to={`/works/post/${pageContext.next.slug}/`} rel="prev">
+                                    <FontAwesomeIcon icon={faChevronLeft} />
+                                    <span>{pageContext.next.title}</span>
+                                </Link>
+                            </li>
+                        )}
+                        {pageContext.previous && (
+                            <li className="next">
+                                <Link to={`/works/post/${pageContext.previous.slug}/`} rel="prev">
+                                    <span>{pageContext.previous.title}</span>
+                                    <FontAwesomeIcon icon={faChevronRight} />
+                                </Link>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </article>
