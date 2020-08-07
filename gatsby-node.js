@@ -11,6 +11,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 id
                 slug
              }
+               next {
+                 title
+                 slug
+               }
+               previous {
+                 title
+                 slug
+              }
             }
            }     
          }
@@ -19,12 +27,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         reporter.panicOnBuild(`GraphQL のクエリでエラーが発生しました`)
         return
     }
-    worksresult.data.allContentfulWorksPost.edges.forEach(({ node }) => {
+    worksresult.data.allContentfulWorksPost.edges.forEach(({ node,next,previous }) => {
         createPage({
             path: `/works/post/${node.slug}/`,
             component: path.resolve(`./src/templates/workspost-template.js`),
             context: {
                 id: node.id,
+                next,
+                previous,
             },
         })
     })
