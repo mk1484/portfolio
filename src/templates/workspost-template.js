@@ -41,8 +41,8 @@ const options = {
 
 export default ({ data,pageContext }) =>(
     <div>
-        <SEO />
         <Layout>
+            <SEO pagetitle={data.contentfulWorksPost.title} />
             <div className="eyecatch">
                 <figure>
                     <Img
