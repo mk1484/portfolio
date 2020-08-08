@@ -11,6 +11,7 @@ module.exports = {
       title: `Ishibashi Portfolio`,
         description: `制作実績`,
         lang: 'ja',
+        siteUrl: `https://ishibashi.netlify.app`,
     },
   plugins: [
       `gatsby-plugin-react-helmet`,

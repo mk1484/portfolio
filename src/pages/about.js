@@ -3,12 +3,13 @@ import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-export default () =>(
+export default ({ location }) =>(
     <div>
         <Layout>
             <SEO
                 pagetitle="about"
                 pagedesc="自己紹介"
+                pagepath={location.pathname}
             />
         <section className="about">
             <div className="container">
