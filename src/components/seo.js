@@ -10,6 +10,7 @@ export default props => {
         title
         lang
         description
+        siteUrl
        }
       }
      } 
@@ -26,6 +27,8 @@ export default props => {
             <html lang={data.site.siteMetadata.lang} />
             <title>{title}</title>
             <meta name="description" content={description} />
+
+            <link rel="canonical" href={data.site.siteMetadata.siteUrl} />
         </Helmet>
     )
 }
