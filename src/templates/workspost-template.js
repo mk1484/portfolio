@@ -40,7 +40,7 @@ const options = {
     },
 }
 
-export default ({ data,pageContext }) =>(
+export default ({ data,pageContext,location }) =>(
     <div>
         <Layout>
             <SEO
@@ -48,6 +48,7 @@ export default ({ data,pageContext }) =>(
                 pagedesc={`${documentToPlainTextString(
                     data.contentfulWorksPost.content.json
                 ).slice(0,70)}…`}
+                pagepath={location.pathname}
             />
             <div className="eyecatch">
                 <figure>
