@@ -16,6 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer"
 
 import { BLOCKS } from "@contentful/rich-text-types"
 const options = {
@@ -39,10 +40,16 @@ const options = {
     },
 }
 
-export default ({ data,pageContext }) =>(
+export default ({ data,pageContext,location }) =>(
     <div>
         <Layout>
-            <SEO pagetitle={data.contentfulWorksPost.title} />
+            <SEO
+                pagetitle={data.contentfulWorksPost.title}
+                pagedesc={`${documentToPlainTextString(
+                    data.contentfulWorksPost.content.json
+                ).slice(0,70)}…`}
+                pagepath={location.pathname}
+            />
             <div className="eyecatch">
                 <figure>
                     <Img
