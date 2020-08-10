@@ -17,6 +17,7 @@ export default ({data}) => (
                                 <Img
                                     fluid={node.eyecatch.fluid}
                                     alt="アイキャッチ画像の説明"
+                                    style={{ height: "100%" }}
                                 />
                             </figure>
                             <h3>{node.title}</h3>
