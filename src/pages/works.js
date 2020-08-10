@@ -16,7 +16,7 @@ export default ({data}) => (
                             <figure>
                                 <Img
                                     fluid={node.eyecatch.fluid}
-                                    alt="アイキャッチ画像の説明"
+                                    alt={node.eyecatch.description}
                                     style={{ height: "100%" }}
                                 />
                             </figure>
@@ -41,6 +41,7 @@ export const query = graphql`
               fluid(maxWidth: 500) {
               ...GatsbyContentfulFluid_withWebp
               }
+              description
             }
           }
         }
