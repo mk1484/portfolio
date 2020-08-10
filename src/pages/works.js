@@ -8,10 +8,9 @@ export default ({data}) => (
         <section className="content bloglist">
             <div className="container">
                 <h1 className="bar">Works</h1>
-
                 <div className="posts">
                     {data.allContentfulWorksPost.edges.map(({ node }) => (
-                    <article className="post">
+                    <article className="post" key={node.id}>
                         <a href="base-blogpost.html">
                             <figure>
                                 <img src="images-baseblog/eyecatch.jpg" alt="アイキャッチ画像の説明" />
@@ -21,7 +20,6 @@ export default ({data}) => (
                     </article>
                     ))}
                 </div>
-
             </div>
         </section>
     </Layout>
@@ -33,6 +31,7 @@ export const query = graphql`
         edges {
           node {
           title
+          id
           }
         }
       }
