@@ -1,8 +1,9 @@
 import React from "react"
 
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
-export default () =>(
+export default ({data}) => (
     <Layout>
         <section className="content bloglist">
             <div className="container">
@@ -61,3 +62,15 @@ export default () =>(
         </section>
     </Layout>
 )
+
+export const query = `
+    query {
+      allContentfulWorksPost(sort; { order: DESC, fields: publishDate }) {
+        edges {
+          node {
+          title
+          }
+        }
+      } 
+    }
+`
