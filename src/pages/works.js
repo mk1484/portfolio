@@ -1,11 +1,17 @@
 import React from "react"
 
+import SEO from "../components/seo"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 
-export default ({data}) => (
+export default ({ data, location }) => (
     <Layout>
+        <SEO
+            pagetitle="works"
+            pagedesc="作品詳細"
+            pagepath={location.pathname}
+        />
         <section className="content bloglist">
             <div className="container">
                 <h1 className="bar">Works</h1>
