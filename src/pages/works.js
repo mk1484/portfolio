@@ -1,6 +1,7 @@
 import React from "react"
 
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 
 export default ({data}) => (
@@ -13,7 +14,10 @@ export default ({data}) => (
                     <article className="post" key={node.id}>
                         <a href="base-blogpost.html">
                             <figure>
-                                <img src="images-baseblog/eyecatch.jpg" alt="アイキャッチ画像の説明" />
+                                <Img
+                                    fluid={node.eyecatch.fluid}
+                                    alt="アイキャッチ画像の説明"
+                                />
                             </figure>
                             <h3>{node.title}</h3>
                         </a>
@@ -32,6 +36,11 @@ export const query = graphql`
           node {
           title
           id
+            eyecatch {
+              fluid(maxWidth: 500) {
+              ...GatsbyContentfulFluid_withWebp
+              }
+            }
           }
         }
       }
