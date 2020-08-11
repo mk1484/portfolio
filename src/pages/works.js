@@ -38,7 +38,11 @@ export default ({ data, location }) => (
 
 export const query = graphql`
     query {
-      allContentfulWorksPost(sort: { order: DESC, fields: publishDate }) {
+      allContentfulWorksPost(
+      sort: { order: DESC, fields: publishDate }
+      skip: 0
+      limit: 6
+      ) {
         edges {
           node {
           title
