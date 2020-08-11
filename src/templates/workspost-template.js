@@ -12,33 +12,32 @@ import {
 import {
     faChevronLeft,
     faChevronRight,
-    faCheckSquare,
+    // faCheckSquare,
 } from "@fortawesome/free-solid-svg-icons"
 
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer"
 
-import { BLOCKS } from "@contentful/rich-text-types"
-const options = {
-    renderNode: {
-        [BLOCKS.HEADING_2]: (node, children) => (
-            <h2>
-                <FontAwesomeIcon icon={faCheckSquare}/>
-                {children}
-            </h2>
-        ),
-        [BLOCKS.EMBEDDED_ASSET]: node => (
-            <img
-                src={node.data.target.fields.file["ja-JP"].url}
-                alt={
-                    node.data.target.fields.description
-                        ? node.data.target.fields.description["ja-JP"]
-                        : node.data.target.fields.title["ja-JP"]
-                }
-            />
-        ),
-    },
-}
+//import { BLOCKS } from "@contentful/rich-text-types"
+// const options = {
+//     renderNode: {
+//         [BLOCKS.HEADING_2]: (node, children) => (
+//             <h2>
+//                 <FontAwesomeIcon icon={faCheckSquare}/>
+//                 {children}
+//             </h2>
+//         ),
+//         [BLOCKS.EMBEDDED_ASSET]: node => (
+//             <img
+//                 src={node.data.target.fields.file["ja-JP"].url}
+//                 alt={
+//                     node.data.target.fields.description
+//                         ? node.data.target.fields.description["ja-JP"]
+//                         : node.data.target.fields.title["ja-JP"]
+//                 }
+//             />
+//         ),
+//     },
+// }
 
 export default ({ data,pageContext,location }) =>(
     <div>
@@ -73,13 +72,10 @@ export default ({ data,pageContext,location }) =>(
                             </ul>
                         </div>
                     </aside>
-                    <div className="postbody">
-                        <p>
-                            {documentToReactComponents(data.contentfulWorksPost.content.json,
-                                options
-                            )}
-                        </p>
-                    </div>
+
+                    <article className="postbody" dangerouslySetInnerHTML={{__html: data.contentfulWorksPost.content.childMarkdownRemark.html}} >
+                    </article>
+
                     <ul className="postlink">
                         {pageContext.next && (
                             <li className="prev">
@@ -129,8 +125,10 @@ export const query = graphql`
           description
         }
         content {
-            json
-         }
+          childMarkdownRemark {
+            html
+          }
+        }
        }
      }
 `
