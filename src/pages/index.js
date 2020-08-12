@@ -1,6 +1,7 @@
 import React from "react"
 
 import SEO from "../components/seo"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
 export default () =>(
@@ -63,3 +64,27 @@ export default () =>(
         </Layout>
     </div>
   )
+
+export const query = graphql`
+query {
+    allContentfulWorksPost(
+      sort: { order: DESC, fields: publishDate }
+      skip: 0
+      limit: 4
+      ) {
+        edges {
+          node {
+          title
+          id
+          slug
+            eyecatch {
+              fluid(maxWidth: 500) {
+              ...GatsbyContentfulFluid_withWebp
+              }
+              description
+            }
+          }
+        }
+    }
+   }
+`
