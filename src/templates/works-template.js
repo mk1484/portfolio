@@ -5,6 +5,12 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+    faChevronLeft,
+    faChevronRight,
+} from "@fortawesome/free-solid-svg-icons"
+
 export default ({ data, location }) => (
     <Layout>
         <SEO
@@ -34,14 +40,14 @@ export default ({ data, location }) => (
                 <ul className="pagenation">
                     <li className="prev">
                         <a href="base-blog.html" rel="prev">
-                            <i className="fas fa-chevron-left" />
+                            <FontAwesomeIcon icon={faChevronLeft} />
                             <span>前のページ</span>
                         </a>
                     </li>
                     <li className="next">
                         <a href="base-blog.html" rel="next">
                             <span>次のページ</span>
-                            <i className="fas fa-chevron-right" />
+                            <FontAwesomeIcon icon={faChevronRight} />
                         </a>
                     </li>
                 </ul>
