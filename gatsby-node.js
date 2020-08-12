@@ -47,6 +47,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         createPage({
             path: i === 0 ? `/works/` : `/works/${i + 1}/`,
             component: path.resolve("./src/templates/works-template.js"),
+            context: {
+                skip: worksPostsPerPage * i,
+                limit: worksPostsPerPage,
+            },
         })
     })
 }
