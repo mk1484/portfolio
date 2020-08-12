@@ -50,6 +50,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             context: {
                 skip: worksPostsPerPage * i,
                 limit: worksPostsPerPage,
+                currentPage: i + 1, //現在のページ番号
+                isFirst: i + 1 === 1, //最初のページ
+                isLast: i + 1 === worksPages, //最後のページ
             },
         })
     })

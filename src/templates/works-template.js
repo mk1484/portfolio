@@ -11,7 +11,7 @@ import {
     faChevronRight,
 } from "@fortawesome/free-solid-svg-icons"
 
-export default ({ data, location }) => (
+export default ({ data, location, pageContext }) => (
     <Layout>
         <SEO
             pagetitle="works"
@@ -38,18 +38,29 @@ export default ({ data, location }) => (
                     ))}
                 </div>
                 <ul className="pagenation">
+                    {!pageContext.isFirst && (
                     <li className="prev">
-                        <a href="base-blog.html" rel="prev">
+                        <Link
+                            to={
+                                pageContext.currentPage === 2
+                                ? `/works/`
+                                : `/works/${pageContext.currentPage - 1}`
+                            }
+                            rel="prev"
+                        >
                             <FontAwesomeIcon icon={faChevronLeft} />
                             <span>前のページ</span>
-                        </a>
+                        </Link>
                     </li>
+                    )}
+                    {!pageContext.isLast && (
                     <li className="next">
-                        <a href="base-blog.html" rel="next">
+                        <Link to={`/works/${pageContext.currentPage + 1}/`} rel="next">
                             <span>次のページ</span>
                             <FontAwesomeIcon icon={faChevronRight} />
-                        </a>
+                        </Link>
                     </li>
+                    )}
                 </ul>
             </div>
         </section>
