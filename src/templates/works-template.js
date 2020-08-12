@@ -31,6 +31,20 @@ export default ({ data, location }) => (
                     </article>
                     ))}
                 </div>
+                <ul className="pagenation">
+                    <li className="prev">
+                        <a href="base-blog.html" rel="prev">
+                            <i className="fas fa-chevron-left" />
+                            <span>前のページ</span>
+                        </a>
+                    </li>
+                    <li className="next">
+                        <a href="base-blog.html" rel="next">
+                            <span>次のページ</span>
+                            <i className="fas fa-chevron-right" />
+                        </a>
+                    </li>
+                </ul>
             </div>
         </section>
     </Layout>
