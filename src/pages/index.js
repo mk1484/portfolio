@@ -1,10 +1,11 @@
 import React from "react"
 
 import SEO from "../components/seo"
-import { graphql } from "gatsby"
+import {graphql, Link} from "gatsby"
 import Layout from "../components/layout"
+import Img from "gatsby-image";
 
-export default () =>(
+export default ({ data }) =>(
     <div>
         <SEO />
         <Layout>
@@ -34,33 +35,27 @@ export default () =>(
                 </div>
             </div>
         </section>
-        <section className="works">
-            <div className="container">
-                <h2>Works</h2>
-                <div className="details">
-                    <div className="detail">
-                        <img src="images/1.jpg" alt="" />
-                    </div>
-                    <div className="detail">
-                        <img src="images/2.jpg" alt="" />
-                    </div>
-                    <div className="detail">
-                        <img src="images/3.jpg" alt="" />
-                    </div>
-                </div>
-                <div className="details">
-                    <div className="detail">
-                        <img src="images/1.jpg" alt="" />
-                    </div>
-                    <div className="detail">
-                        <img src="images/2.jpg" alt="" />
-                    </div>
-                    <div className="detail">
-                        <img src="images/3.jpg" alt="" />
+            <section>
+                <div className="container">
+                    <h2 className="sr-only">Works</h2>
+                    <div className="posts">
+                        {data.allContentfulWorksPost.edges.map(({ node }) => (
+                            <article className="post" key={node.id}>
+                                <Link to={`/works/post/${node.slug}/`}>
+                                    <figure>
+                                        <Img
+                                            fluid={node.eyecatch.fluid}
+                                            alt={node.eyecatch.description}
+                                            style={{ height: "100%" }}
+                                        />
+                                    </figure>
+                                    <h3>{node.title}</h3>
+                                </Link>
+                            </article>
+                        ))}
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
         </Layout>
     </div>
   )
@@ -78,13 +73,13 @@ query {
           id
           slug
             eyecatch {
-              fluid(maxWidth: 500) {
+              fluid(maxWidth: 573) {
               ...GatsbyContentfulFluid_withWebp
               }
               description
             }
           }
         }
-    }
+      }
    }
 `
