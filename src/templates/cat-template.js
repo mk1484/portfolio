@@ -68,11 +68,12 @@ export default ({ data, location, pageContext }) => (
 )
 
 export const query = graphql`
-    query($skip: Int!, $limit: Int!) {
+    query($catid: String!, $skip: Int!, $limit: Int!) {
       allContentfulWorksPost(
       sort: { order: DESC, fields: publishDate }
       skip: $skip
       limit: $limit
+      filter: { category: { id: { eq: $catid }}}
       ) {
         edges {
           node {
