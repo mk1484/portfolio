@@ -20,7 +20,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                  slug
               }
             }
-           }     
+           }
+           allContentfulCategory {
+              edges {
+                node {
+                  categorySlug
+                }
+              }
+            }    
          }
     `)
     if (worksresult.errors) {
@@ -53,6 +60,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 currentPage: i + 1, //現在のページ番号
                 isFirst: i + 1 === 1, //最初のページ
                 isLast: i + 1 === worksPages, //最後のページ
+            },
+        })
+    })
+    worksresult.data.allContentfulCategory.edges.forEach(({ node }) => {
+        createPage({
+            path: `/cat/${node.categorySlug}/`,
+            component: path.resolve(`./src/templates/cat-template.js`),
+            context: {
+                skip: 0,
+                limit: 100,
+                currentPage: 1, //現在のページ番号
+                isFirst: true, //最初のページ
+                isLast: true, //最後のページ
             },
         })
     })
