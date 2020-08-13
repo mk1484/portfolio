@@ -12,32 +12,9 @@ import {
 import {
     faChevronLeft,
     faChevronRight,
-    // faCheckSquare,
 } from "@fortawesome/free-solid-svg-icons"
 
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer"
-
-//import { BLOCKS } from "@contentful/rich-text-types"
-// const options = {
-//     renderNode: {
-//         [BLOCKS.HEADING_2]: (node, children) => (
-//             <h2>
-//                 <FontAwesomeIcon icon={faCheckSquare}/>
-//                 {children}
-//             </h2>
-//         ),
-//         [BLOCKS.EMBEDDED_ASSET]: node => (
-//             <img
-//                 src={node.data.target.fields.file["ja-JP"].url}
-//                 alt={
-//                     node.data.target.fields.description
-//                         ? node.data.target.fields.description["ja-JP"]
-//                         : node.data.target.fields.title["ja-JP"]
-//                 }
-//             />
-//         ),
-//     },
-// }
 
 export default ({ data,pageContext,location }) =>(
     <div>
