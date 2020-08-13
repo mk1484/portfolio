@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Logo from "../../public/images/logo-w.svg"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
     faTwitter,
@@ -13,7 +15,7 @@ export default () => (
         <div className="container">
             <div className="site">
                 <Link to={`/`}>
-                    <img src="images/logo-w.svg" alt="" />
+                    <img src={ Logo } alt="" />
                     <p>portfolio</p>
                 </Link>
             </div>
