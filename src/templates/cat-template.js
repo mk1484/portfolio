@@ -20,7 +20,7 @@ export default ({ data, location, pageContext }) => (
         />
         <section className="content bloglist">
             <div className="container">
-                <h1 className="bar">Works</h1>
+                <h1 className="bar">Category : {pageContext.catname}</h1>
                 <div className="posts">
                     {data.allContentfulWorksPost.edges.map(({ node }) => (
                     <article className="post" key={node.id}>
