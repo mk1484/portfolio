@@ -44,10 +44,11 @@ export default ({ data,pageContext,location }) =>(
                             <FontAwesomeIcon icon={faFolderOpen} />
                             <ul>
                                 <li className={data.contentfulWorksPost.category.categorySlug} key={data.contentfulWorksPost.category.id}>
-                                    {data.contentfulWorksPost.category.category}
+                                    <Link to={`/cat/${data.contentfulWorksPost.category.categorySlug}/`}>{data.contentfulWorksPost.category.category}</Link>
                                 </li>
                             </ul>
                         </div>
+                        {console.log(data.contentfulWorksPost.category.categorySlug)}
                     </aside>
 
                     <article className="postbody" dangerouslySetInnerHTML={{__html: data.contentfulWorksPost.content.childMarkdownRemark.html}} >
