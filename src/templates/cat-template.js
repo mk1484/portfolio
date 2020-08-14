@@ -14,8 +14,8 @@ import {
 export default ({ data, location, pageContext }) => (
     <Layout>
         <SEO
-            pagetitle="works"
-            pagedesc="作品詳細"
+            pagetitle={`Category : ${pageContext.catname}`}
+            pagedesc={`「${pageContext.catname}」カテゴリーの記事`}
             pagepath={location.pathname}
         />
         <section className="content bloglist">
