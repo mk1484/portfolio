@@ -27,6 +27,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                   categorySlug
                   id
                   category
+                  workspost {
+                    title
+                  }
                 }
               }
             }    
@@ -49,6 +52,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         })
     })
 
+    //記事一覧ページの設定
     const worksPostsPerPage = 6 //1ページに表示する記事の数
     const worksPosts = worksresult.data.allContentfulWorksPost.edges.length //記事の総数
     const worksPages = Math.ceil(worksPosts / worksPostsPerPage) //記事一覧ページの総数
@@ -66,19 +70,31 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             },
         })
     })
+
+    //カテゴリーページの設定
     worksresult.data.allContentfulCategory.edges.forEach(({ node }) => {
-        createPage({
-            path: `/cat/${node.categorySlug}/`,
-            component: path.resolve(`./src/templates/cat-template.js`),
-            context: {
-                catid: node.id,
-                catname: node.category,
-                skip: 0,
-                limit: 100,
-                currentPage: 1, //現在のページ番号
-                isFirst: true, //最初のページ
-                isLast: true, //最後のページ
-            },
+        const catPostsPerPage = 6 //1ページに表示する記事の数
+        const catPosts = node.workspost.length //カテゴリーに属した記事の総数
+        const catPages = Math.ceil(catPosts / catPostsPerPage) //カテゴリーページの総数
+
+        Array.from({ length: catPages }).forEach((_, i) => {
+            createPage({
+                path:
+                    i === 0
+                    ? `/cat/${node.categorySlug}/`
+                    : `/cat/${node.categorySlug}/${i + 1}`,
+                component: path.resolve(`./src/templates/cat-template.js`),
+                context: {
+                    catid: node.id,
+                    catname: node.category,
+                    catslug: node.categorySlug,
+                    skip: catPostsPerPage * i,
+                    limit: catPostsPerPage,
+                    currentPage: i + 1, //現在のページ番号
+                    isFirst: i + 1 === 1, //最初のページ
+                    isLast: i + 1 === catPages, //最後のページ
+                },
+            })
         })
     })
 }
