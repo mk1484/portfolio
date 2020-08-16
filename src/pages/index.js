@@ -15,11 +15,11 @@ export default ({ data }) =>(
                 <img src="/images/main.jpg" alt="" />
             </figure>
             </div>
-        </section>
-        <section className="catch">
-            <div className="container">
-                <h1>Ishibashi</h1>
-                <p>web designer</p>
+            <div className="catch">
+                <div className="container">
+                    <h1>Ishibashi</h1>
+                    <h3>web designer</h3>
+                </div>
             </div>
         </section>
         <section className="about">
@@ -28,16 +28,24 @@ export default ({ data }) =>(
                 <div className="details">
                     <div className="detail">
                         <figure>
-                            <img src="images/1.jpg" alt="" />
+                            <img src="images/about.png" alt="" />
                         </figure>
-                        <p>texttexttexttext<br />texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+                        <div className="introduction">
+                            <div>Ishibashi</div>
+                            <div>
+                            <p>文章文章文章文章文章文章文章文章文章文章文章文章。<br/>
+                                文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章。 <br />
+                                文章文章文章文章文章文章文章文章文章文章文章。</p>
+                            </div>
+                            <div className="default-btn"><Link to={`/about/`}>view more</Link></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-            <section>
+            <section className="works">
                 <div className="container">
-                    <h2 className="sr-only">Works</h2>
+                    <h2>Works</h2>
                     <div className="posts">
                         {data.allContentfulWorksPost.edges.map(({ node }) => (
                             <article className="post" key={node.id}>
@@ -49,11 +57,12 @@ export default ({ data }) =>(
                                             style={{ height: "100%" }}
                                         />
                                     </figure>
-                                    <h3>{node.title}</h3>
+                                    {/*<h3>{node.title}</h3>*/}
                                 </Link>
                             </article>
                         ))}
                     </div>
+                    <div className="default-btn"><Link to={`/about/`}>view more</Link></div>
                 </div>
             </section>
         </Layout>
@@ -65,7 +74,7 @@ query {
     allContentfulWorksPost(
       sort: { order: DESC, fields: publishDate }
       skip: 0
-      limit: 4
+      limit: 9
       ) {
         edges {
           node {

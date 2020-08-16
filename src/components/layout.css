@@ -1,8 +1,13 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Alata');
+
+html {
+	font-family: 'Alata', sans-serif;
+}
 
 /* 基本 */
 body {
-	font-family: sans-serif;
+	/*font-family: sans-serif;*/
 	color: #333;
 }
 
@@ -25,9 +30,30 @@ a {
 a:hover {
 	opacity: 0.8;
 }
+.default-btn {
+	color: #333;
+	border: 1px solid #333;
+	text-align: center;
+	width: 70%;
+	padding: 5px 20px 10px 20px;
+	border-radius: 3px;
 
+}
+@media (min-width: 900px) {
+	.default-btn {
+		width: 160px;
+
+	}
+}
+
+.default-btn:hover {
+	color: #fff;
+	background: #333;
+	transition: .2s ;
+}
 p {
 	word-wrap: break-word;
+	letter-spacing: .1em;
 }
 
 img {
@@ -73,11 +99,17 @@ svg {
 
 
 /* header */
+.header {
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+}
+
 .header .container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 134px;
+	height: 100px;
 	text-align: center;
 }
 
@@ -101,17 +133,20 @@ svg {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		height: 100px;
 	}
 }
 
 
+/* ===========================
+ topページ
+ =========================== */
 /* main */
 .main {
 	position: relative;
-	/*max-width: 1080px;*/
+	max-width: 1147px;
 	height: 600px;
 	margin: 0 auto;
+	padding-top: 100px;
 }
 
 .main figure img {
@@ -125,7 +160,7 @@ svg {
 .catch {
 	max-width: 1147px;
 	position: absolute;
-	top: 560px;
+	top: 550px;
 	left: 0;
 	margin: auto auto 10%;
 	display: flex;
@@ -138,7 +173,7 @@ svg {
 
 .catch h1 {
 	font-size: 50px;
-	/*margin-bottom: 10px;*/
+	margin-bottom: -15px;
 }
 .catch p {
 	font-size: 20px;
@@ -146,18 +181,19 @@ svg {
 
 @media (min-width: 900px) {
 	.main {
-		margin-bottom: 100px;
+		/*margin-bottom: 100px;*/
+
 	}
 	.main figure img {
 		/*height: 750px;*/
 	}
 	.catch {
-		top: 540px;
-		left: 70px;
+		top: 500px;
+		left: 0px;
 	}
 	.catch h1 {
 		font-size: 70px;
-		margin-bottom: 30px;
+		margin-bottom: -10px;
 	}
 	.catch p {
 		font-size: 16px;
@@ -201,11 +237,23 @@ svg {
 }
 
 /* About */
-.about .detail figure {
-	/*max-width: 320px;*/
-	/*margin: auto;*/
+.about .detail img {
+	display: block;
+	width: 70%;
+	margin: 0 auto 20px;
 }
-
+.about .detail .introduction div:first-child{
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.about .detail .introduction p {
+	margin-bottom: 20px;
+}
+.about .detail .introduction .default-btn {
+	margin: 0 auto;
+}
 
 @media (min-width: 900px) {
 	.about .detail {
@@ -215,14 +263,28 @@ svg {
 	.about .detail {
 		width: 100%
 	}
-	.about .detail p {
+	.about .detail img {
+		width: 200px;
+	}
+	.about .detail .introduction {
 		margin-left: 30px;
 	}
-
+	.about .detail .introduction div:first-child {
+		text-align: left;
+	}
+	.about .detail .introduction p {
+		/*margin-left: 30px;*/
+		margin-bottom: 20px;
+	}
+	.about .detail .introduction .default-btn {
+		margin-left: 0;
+	}
 }
 
 /* Works */
-
+.works .default-btn {
+	margin: 0 auto;
+}
 
 /*@media (min-width: 950px) {*/
 	/*.detail p:last-of-type {*/
@@ -433,12 +495,13 @@ svg {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	/*padding-top: 50px;*/
+	/*padding-bottom: 50px;*/
 }
 
 .posts article {
-	width: 48%;
+	/*width: 48%;*/
+	width: 100%;
 	margin-bottom: 20px;
 }
 .posts figure {
@@ -457,6 +520,11 @@ svg {
 @media (min-width: 768px) {
 	.posts h3 {
 		font-size: 16px;
+	}
+	.posts article {
+		/*width: 48%;*/
+		width: 32%;
+		margin-bottom: 20px;
 	}
 	.posts figure {
 		height: 200px;
