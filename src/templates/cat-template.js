@@ -18,7 +18,8 @@ export default ({ data, location, pageContext }) => (
             pagedesc={`「${pageContext.catname}」カテゴリーの記事`}
             pagepath={location.pathname}
         />
-        <section className="content bloglist">
+        <div className="header-fixed-pb">
+            <section className="content bloglist">
             <div className="container">
                 <h1 className="bar">Category : {pageContext.catname}</h1>
                 <div className="posts">
@@ -29,10 +30,9 @@ export default ({ data, location, pageContext }) => (
                                 <Img
                                     fluid={node.eyecatch.fluid}
                                     alt={node.eyecatch.description}
-                                    style={{ height: "100%" }}
+                                    // style={{ height: "100%" }}
                                 />
                             </figure>
-                            <h3>{node.title}</h3>
                         </Link>
                     </article>
                     ))}
@@ -64,6 +64,7 @@ export default ({ data, location, pageContext }) => (
                 </ul>
             </div>
         </section>
+        </div>
     </Layout>
 )
 

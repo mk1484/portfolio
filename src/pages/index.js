@@ -9,62 +9,63 @@ export default ({ data }) =>(
     <div>
         <SEO />
         <Layout>
-        <section className="main">
-            <div className="container">
-            <figure>
-                <img src="/images/main.jpg" alt="" />
-            </figure>
-            </div>
-            <div className="catch">
-                <div className="container">
-                    <h1>Ishibashi</h1>
-                    <h3>web designer</h3>
-                </div>
-            </div>
-        </section>
-        <section className="about">
-            <div className="container">
-                <h2>About</h2>
-                <div className="details">
-                    <div className="detail">
-                        <figure>
-                            <img src="images/about.png" alt="" />
-                        </figure>
-                        <div className="introduction">
-                            <div>Ishibashi</div>
-                            <div>
-                            <p>文章文章文章文章文章文章文章文章文章文章文章文章。<br/>
-                                文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章。 <br />
-                                文章文章文章文章文章文章文章文章文章文章文章。</p>
-                            </div>
-                            <div className="default-btn"><Link to={`/about/`}>view more</Link></div>
+            <div className="header-fixed-pb">
+                <section className="main">
+                    <div className="container">
+                    <figure>
+                        <img src="/images/main.jpg" alt="" />
+                    </figure>
+                    </div>
+                    <div className="catch">
+                        <div className="container">
+                            <h1>Ishibashi</h1>
+                            <h3>web designer</h3>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-            <section className="works">
-                <div className="container">
-                    <h2>Works</h2>
-                    <div className="posts">
-                        {data.allContentfulWorksPost.edges.map(({ node }) => (
-                            <article className="post" key={node.id}>
-                                <Link to={`/works/post/${node.slug}/`}>
-                                    <figure>
-                                        <Img
-                                            fluid={node.eyecatch.fluid}
-                                            alt={node.eyecatch.description}
-                                            style={{ height: "100%" }}
-                                        />
-                                    </figure>
-                                    {/*<h3>{node.title}</h3>*/}
-                                </Link>
-                            </article>
-                        ))}
+                </section>
+                <section className="about">
+                    <div className="container">
+                        <h2>About</h2>
+                        <div className="details">
+                            <div className="detail">
+                                <figure>
+                                    <img src="images/about.png" alt="" />
+                                </figure>
+                                <div className="introduction">
+                                    <h3>Ishibashi</h3>
+                                    <div>
+                                        <p>UIデザインを中心としたwebデザインをしております。
+                                            情報の整理を行い、分かりやすい情報設計を意識した制作を行っております。<br /><br />
+                                        </p>
+                                    </div>
+                                    <div className="default-btn"><Link to={`/about/`}>view more</Link></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="default-btn"><Link to={`/about/`}>view more</Link></div>
-                </div>
-            </section>
+                </section>
+                <section className="works">
+                        <div className="container">
+                            <h2>Works</h2>
+                            <div className="posts">
+                                {data.allContentfulWorksPost.edges.map(({ node }) => (
+                                    <article className="post" key={node.id}>
+                                        <Link to={`/works/post/${node.slug}/`}>
+                                            <figure>
+                                                <Img
+                                                    fluid={node.eyecatch.fluid}
+                                                    alt={node.eyecatch.description}
+                                                    // style={{ height: "100%" }}
+                                                />
+                                            </figure>
+                                        </Link>
+                                    </article>
+                                ))}
+                            </div>
+                            <div className="default-btn"><Link to={`/works/`}>view more</Link></div>
+                        </div>
+                    </section>
+            </div>
         </Layout>
     </div>
   )
@@ -74,7 +75,7 @@ query {
     allContentfulWorksPost(
       sort: { order: DESC, fields: publishDate }
       skip: 0
-      limit: 9
+      limit: 6
       ) {
         edges {
           node {

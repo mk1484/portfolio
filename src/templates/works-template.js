@@ -18,9 +18,10 @@ export default ({ data, location, pageContext }) => (
             pagedesc="作品詳細"
             pagepath={location.pathname}
         />
-        <section className="content bloglist">
+        <div className="header-fixed-pb">
+            <section className="content works bloglist">
             <div className="container">
-                <h1 className="bar">Works</h1>
+                <h2>Works</h2>
                 <div className="posts">
                     {data.allContentfulWorksPost.edges.map(({ node }) => (
                     <article className="post" key={node.id}>
@@ -29,10 +30,8 @@ export default ({ data, location, pageContext }) => (
                                 <Img
                                     fluid={node.eyecatch.fluid}
                                     alt={node.eyecatch.description}
-                                    style={{ height: "100%" }}
                                 />
                             </figure>
-                            <h3>{node.title}</h3>
                         </Link>
                     </article>
                     ))}
@@ -64,6 +63,7 @@ export default ({ data, location, pageContext }) => (
                 </ul>
             </div>
         </section>
+        </div>
     </Layout>
 )
 
