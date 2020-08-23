@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
-    faClock, faFolderOpen
+   faFolderOpen
 } from "@fortawesome/free-regular-svg-icons"
 import {
     faChevronLeft,
@@ -26,54 +26,54 @@ export default ({ data,pageContext,location }) =>(
                 ).slice(0,70)}…`}
                 pagepath={location.pathname}
             />
-            <div className="eyecatch">
-                <figure>
-                    <Img
-                        fluid={data.contentfulWorksPost.eyecatch.fluid}
-                        alt={data.contentfulWorksPost.eyecatch.description}
-                    />
-                </figure>
-            </div>
-            <article className="content">
-                <div className="container">
-                    <h1 className="bar">{data.contentfulWorksPost.title}</h1>
-                    <aside className="info">
-                        <time dateTime={data.contentfulWorksPost.publishDate}>
-                            <FontAwesomeIcon icon={faClock} />{data.contentfulWorksPost.publishDateJP}</time>
-                        <div className="cat">
-                            <FontAwesomeIcon icon={faFolderOpen} />
-                            <ul>
-                                <li className={data.contentfulWorksPost.category.categorySlug} key={data.contentfulWorksPost.category.id}>
-                                    <Link to={`/cat/${data.contentfulWorksPost.category.categorySlug}/`}>{data.contentfulWorksPost.category.category}</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        {console.log(data.contentfulWorksPost.category.categorySlug)}
-                    </aside>
-
-                    <article className="postbody" dangerouslySetInnerHTML={{__html: data.contentfulWorksPost.content.childMarkdownRemark.html}} >
-                    </article>
-
-                    <ul className="postlink">
-                        {pageContext.next && (
-                            <li className="prev">
-                                <Link to={`/works/post/${pageContext.next.slug}/`} rel="prev">
-                                    <FontAwesomeIcon icon={faChevronLeft} />
-                                    <span>{pageContext.next.title}</span>
-                                </Link>
-                            </li>
-                        )}
-                        {pageContext.previous && (
-                            <li className="next">
-                                <Link to={`/works/post/${pageContext.previous.slug}/`} rel="prev">
-                                    <span>{pageContext.previous.title}</span>
-                                    <FontAwesomeIcon icon={faChevronRight} />
-                                </Link>
-                            </li>
-                        )}
-                    </ul>
+            <div className="header-fixed-pb">
+                <div className="eyecatch">
+                    <figure>
+                        <Img
+                            fluid={data.contentfulWorksPost.eyecatch.fluid}
+                            alt={data.contentfulWorksPost.eyecatch.description}
+                        />
+                    </figure>
                 </div>
-            </article>
+                <article className="content">
+                    <div className="container">
+                        <h1 className="post-title">{data.contentfulWorksPost.title}</h1>
+                        <aside className="info">
+                            <div className="cat">
+                                <FontAwesomeIcon icon={faFolderOpen} />
+                                <ul>
+                                    <li className={data.contentfulWorksPost.category.categorySlug} key={data.contentfulWorksPost.category.id}>
+                                        <Link to={`/cat/${data.contentfulWorksPost.category.categorySlug}/`}>{data.contentfulWorksPost.category.category}</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            {console.log(data.contentfulWorksPost.category.categorySlug)}
+                        </aside>
+
+                        <article className="postbody" dangerouslySetInnerHTML={{__html: data.contentfulWorksPost.content.childMarkdownRemark.html}} >
+                        </article>
+
+                        <ul className="postlink">
+                            {pageContext.next && (
+                                <li className="prev">
+                                    <Link to={`/works/post/${pageContext.next.slug}/`} rel="prev">
+                                        <FontAwesomeIcon icon={faChevronLeft} />
+                                        <span>{pageContext.next.title}</span>
+                                    </Link>
+                                </li>
+                            )}
+                            {pageContext.previous && (
+                                <li className="next">
+                                    <Link to={`/works/post/${pageContext.previous.slug}/`} rel="prev">
+                                        <span>{pageContext.previous.title}</span>
+                                        <FontAwesomeIcon icon={faChevronRight} />
+                                    </Link>
+                                </li>
+                            )}
+                        </ul>
+                    </div>
+                </article>
+            </div>
         </Layout>
     </div>
 )
