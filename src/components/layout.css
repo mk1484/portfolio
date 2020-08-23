@@ -483,7 +483,6 @@ svg {
 }
 
 .posts article {
-	/*width: 48%;*/
 	height: 100%;
 	width: 100%;
 	margin-bottom: 20px;
@@ -506,13 +505,13 @@ svg {
 	}
 	.posts article {
 		width: 32%;
-		margin-bottom: 45px;
+		margin-bottom: 20px;
 	}
 	.posts figure {
-		height: 200px;
+		/*height: 200px;*/
 	}
 	.posts img {
-		height: 200px;
+		/*height: 200px;*/
 	}
 }
 
