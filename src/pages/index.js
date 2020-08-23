@@ -55,7 +55,6 @@ export default ({ data }) =>(
                                                 <Img
                                                     fluid={node.eyecatch.fluid}
                                                     alt={node.eyecatch.description}
-                                                    // style={{ height: "100%" }}
                                                 />
                                             </figure>
                                         </Link>
