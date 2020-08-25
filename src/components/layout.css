@@ -398,21 +398,30 @@ svg {
  =========================== */
 
 /* ブログ記事の情報 */
+.eyecatch {
+	width: 84%;
+	margin: 0 auto 15px auto;
+}
 .post-title {
 	margin-bottom: 5px;
+	text-align: center;
 }
+
 .info {
+	font-size: 12px;
 	margin-bottom: 20px;
-	border-bottom: 2px dotted #efefef;
+	text-align: center;
 }
-.info time {
-	margin-bottom: 5px;
+
+.info .cat [class*="fa-"] {
+	margin-right: 5px;
 }
 
 .info .cat ul {
 	list-style: none;
 	display: inline-flex;
 }
+
 .info .cat li:not(:last-child)::after {
 	content: '・';
 	margin: 0 5px;
@@ -421,15 +430,12 @@ svg {
 @media (min-width: 768px) {
 	.eyecatch {
 		width: 84%;
-		margin: 0 auto;
+		margin: 0 auto 15px auto;
 	}
 	.info {
-		display: flex;
-		justify-content: space-between;
-		font-size: 16px;
+		font-size: 14px;
 	}
 }
-
 
 /* 前後の記事へのリンク */
 .postlink {
@@ -438,6 +444,7 @@ svg {
 	color: #477294;
 	font-size: 14px;
 	display: flex;
+	margin-bottom: 15px;
 }
 
 .postlink li {
