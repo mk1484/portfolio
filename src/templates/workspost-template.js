@@ -27,14 +27,6 @@ export default ({ data,pageContext,location }) =>(
                 pagepath={location.pathname}
             />
             <div className="header-fixed-pb">
-                <div className="eyecatch">
-                    <figure>
-                        <Img
-                            fluid={data.contentfulWorksPost.eyecatch.fluid}
-                            alt={data.contentfulWorksPost.eyecatch.description}
-                        />
-                    </figure>
-                </div>
                 <article className="content">
                     <div className="container">
                         <h1 className="post-title">{data.contentfulWorksPost.title}</h1>
@@ -49,7 +41,18 @@ export default ({ data,pageContext,location }) =>(
                             </div>
                             {console.log(data.contentfulWorksPost.category.categorySlug)}
                         </aside>
-
+                    </div>
+                </article>
+                <div className="eyecatch">
+                    <figure>
+                        <Img
+                            fluid={data.contentfulWorksPost.eyecatch.fluid}
+                            alt={data.contentfulWorksPost.eyecatch.description}
+                        />
+                    </figure>
+                </div>
+                <article className="content">
+                    <div className="container">
                         <article className="postbody" dangerouslySetInnerHTML={{__html: data.contentfulWorksPost.content.childMarkdownRemark.html}} >
                         </article>
 
