@@ -15,7 +15,7 @@ export default () => (
         <div className="container">
             <div className="site">
                 <Link to={`/`}>
-                    <img src={ Logo } alt="" />
+                    <img src={ Logo } />
                 </Link>
             </div>
             <ul className="sns">
