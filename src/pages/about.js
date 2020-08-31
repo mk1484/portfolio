@@ -2,6 +2,7 @@ import React from "react"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import {Link} from "gatsby";
 
 export default ({ location }) =>(
     <div>
@@ -30,8 +31,12 @@ export default ({ location }) =>(
                                             HTML5 / CSS3 / Sass / Vue.js / Git / Photoshop / Illustrator / XD / Figma / AfterEffect</p>
                                     </div>
                                     <div className="about-link">
-                                        <div className="default-btn"><a href="https://github.com/mk1484">Github</a></div>
-                                        <div className="default-btn"><a href="https://mn1021.hatenablog.com/">Blog</a></div>
+                                        <div className="default-btn">
+                                            <span><a href="https://github.com/mk1484">Github</a></span>
+                                        </div>
+                                        <div className="default-btn">
+                                            <span><a href="https://mn1021.hatenablog.com/">Blog</a></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
