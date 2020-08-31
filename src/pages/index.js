@@ -38,7 +38,9 @@ export default ({ data }) =>(
                                             情報の整理を行い、分かりやすい情報設計を意識した制作を行っております。<br /><br />
                                         </p>
                                     </div>
-                                    <div className="default-btn"><Link to={`/about/`}>view more</Link></div>
+                                    <div className="default-btn">
+                                        <span><Link to={`/about/`}>view more</Link></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +63,9 @@ export default ({ data }) =>(
                                     </article>
                                 ))}
                             </div>
-                            <div className="default-btn"><Link to={`/works/`}>view more</Link></div>
+                            <div className="default-btn">
+                                <span><Link to={`/works/`}>view more</Link></span>
+                            </div>
                         </div>
                     </section>
             </div>
