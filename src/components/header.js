@@ -7,9 +7,9 @@ export default () => (
     <header className="header">
         <div className="container">
             <div className="site">
-                {/*<Link to={`/`}>*/}
-                    {/*<img src={ Logo } alt="" />*/}
-                {/*</Link>*/}
+                <Link to={`/`}>
+                    <img src={ Logo } alt="" />
+                </Link>
             </div>
             <nav className="nav">
                 <ul>
