@@ -1,9 +1,7 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Alata');
 @import url('https://fonts.googleapis.com/css?family=Robot');
 
-html {
-	font-family: 'Roboto', sans-serif;
-}
 
 /* 基本 */
 body {
@@ -105,12 +103,20 @@ svg {
 }
 
 .nav,
-.catch h1,
 .about h2,
 .works h2,
 .detail p:first-of-type,
 .info .subtitle {
 	font-family: 'Avenir Next', 'Segoe UI', Helvetica, sans-serif;
+}
+
+.catch h1 {
+	font-family: 'Alata', sans-serif;
+}
+h3 {
+	font-family: 'Robot', sans-serif;
+	letter-spacing: 1px;
+	font-size: 14px;
 }
 
 .sr-only {
