@@ -34,11 +34,11 @@ export default ({ location }) =>(
                                             HTML5 / CSS3 / Sass / Vue.js / Git / Photoshop / Illustrator / XD / Figma / AfterEffect</p>
                                     </div>
                                     <div className="about-link">
-                                        <div className="default-btn">
-                                            <span><a href="https://github.com/mk1484">Github</a></span>
+                                        <div className="github-btn">
+                                            <span><a href="https://github.com/mk1484"><img src="../images/Github.png" />Github</a></span>
                                         </div>
-                                        <div className="default-btn">
-                                            <span><a href="https://mn1021.hatenablog.com/">Blog</a></span>
+                                        <div className="blog-btn">
+                                            <span><a href="https://mn1021.hatenablog.com/"><img src="../images/hatena.svg" />Blog</a></span>
                                         </div>
                                     </div>
                                 </div>
