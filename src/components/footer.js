@@ -18,13 +18,13 @@ export default () => (
                     <img src={ Logo } />
                 </Link>
             </div>
-            <ul className="sns">
-                <li>
-                    <a href="https://twitter.com/1484mi">
-                        <FontAwesomeIcon icon={faTwitter} />
-                        <span className="sr-only">Twitter</span>
-                    </a>
-                </li>
+            {/*<ul className="sns">*/}
+                {/*<li>*/}
+                    {/*<a href="https://twitter.com/1484mi">*/}
+                        {/*<FontAwesomeIcon icon={faTwitter} />*/}
+                        {/*<span className="sr-only">Twitter</span>*/}
+                    {/*</a>*/}
+                {/*</li>*/}
                 {/*<li>*/}
                     {/*<a href="https://facebook.com/">*/}
                         {/*<FontAwesomeIcon icon={faFacebookSquare} />*/}
@@ -37,7 +37,7 @@ export default () => (
                         {/*<span className="sr-only">Instagram</span>*/}
                     {/*</a>*/}
                 {/*</li>*/}
-            </ul>
+            {/*</ul>*/}
         </div>
     </footer>
 )
